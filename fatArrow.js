@@ -21,9 +21,9 @@ var javascript = {
 };
 javascript.printLibraries();
 
-//Far Arrow Function
+//Fat Arrow Function
 
-//Far Arrow function
+//Fat Arrow function
 var javascript = {
 	name: "JavaScript",
 	myName: "Rezwan",
@@ -33,3 +33,42 @@ var javascript = {
 	},
 };
 javascript.printLibraries();
+
+/**
+ * Case 2
+ * Where normal function is better
+ * fatArrow.html is attached for this case
+ */
+const searchInput = document.querySelector(".search");
+const display = document.querySelector(".result");
+const thanks = document.querySelector(".thanks");
+
+function show() {
+	display.innerHTML = this.value;
+	var self = this;
+	setTimeout(function () {
+		thanks.innerHTML = `You have typed: ${self.value}`;
+	}, 1000);
+}
+
+//Here, fat arrow function shows undefined, because arrow function doesn't 'understand' this. normal function is the way to do it right.
+/*
+const show = () => {
+	display.innerHTML = this.value;
+};
+*/
+
+searchInput.addEventListener("keyup", show);
+
+/**
+ * Case 3
+ * Constructor Function
+ * The following normal function can't be converted to an arrow function.
+ * new keyword doesn't work in arrow function
+ */
+function Person(userName) {
+	this.userName = userName;
+}
+var rez = new Person("Rezwan");
+
+//I'm grateful to Sumit Saha for teaching this.
