@@ -23,7 +23,7 @@ const people = [
 	},
 	{
 		name: "Russell",
-		occupation: "Wordpress",
+		occupation: "",
 	},
 	{
 		name: "Kate",
